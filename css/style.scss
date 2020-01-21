@@ -1,0 +1,234 @@
+@import 'nullstyle.scss';
+
+$body_bg: #252627;
+$vk_bg: #4a5ccf;
+$vote_bg: #5bde6f;
+$mail_bg: #5167f0;
+
+body{
+    background-color: $body_bg;
+}
+
+*{
+    font-family: 'Alata', sans-serif;
+}
+
+body{
+    user-select: none;
+}
+
+h3, p{
+    color: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    & h3{
+        font-size: 32px;
+        font-weight: 400;
+    }
+}
+.arrow-down{
+    width: 100%;
+    margin: 0 auto;
+}
+.arrow-down::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(45deg);
+    animation: 3s arrow infinite ease;
+    z-index: 0;
+}
+
+@-webkit-keyframes arrow{
+    0%, 100%{top: 350px;}
+    50%{top: 380px;}
+}
+
+@keyframes arrow{
+    0%, 100%{top: 350px;}
+    50%{top: 380px;}
+}
+
+.cont_wrapper{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.containter_cont{
+    height: 320px;
+    width: 320px;
+}
+
+.cont_img{
+    font-size: 60px;
+    height: calc(320px / 2);
+    & i{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 90px 0;
+    }
+}
+
+.cont_name{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.online{
+    display: flex;
+    justify-content: center;
+    justify-items: flex-start;
+    position: relative;
+    z-index: 2;
+    & a{
+        font-size: 24px;
+        color: $body_bg;
+        background: #fff;
+        padding: 7px 9px;
+        border-radius: 7px;
+        height: 40px;
+        width: 40px;
+        transition: .5s;
+    }
+    .vote{
+        margin-left: 20px;
+        margin-right: 20px;
+        &:hover a{
+            background: $vote_bg;
+            color: #fff;
+        }
+    }
+    .vk:hover a{
+        color: #fff;
+        background: $vk_bg;
+    }
+
+    .mail:hover a{
+        color: #fff;
+        background: $mail_bg;
+    }
+}
+
+.cont_prof{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+.end{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    & a{
+        color: #fff;
+    }
+}
+
+
+.overlay{
+    display: none;
+    height: calc(100vh + 333px + 220px);
+    background-color: rgba(0, 0, 0, 0.54);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 22;
+
+}
+
+.wrapper_pop{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+}
+
+.popup{ 
+    margin-top: 300px;
+    min-width: calc(100% - 1200px);
+    height: 320px;
+    background: #fff;
+}
+
+.popup_title{
+    height: 71px;
+    background: $vk_bg;
+    color: #fff;
+    & i{
+        font-size: 35px;
+        margin: 15px 20px;
+        justify-self: flex-start;
+    }
+}
+
+.popup_close{
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    margin-left: calc(100% - 20px - 20px);
+    margin-top: -43px;
+    width: 15px;
+    justify-self: flex-start;
+}
+
+.popup_form{
+    height: 250px;
+}
+
+.popup_form_header{
+    margin-top: 40px;
+    font-size: 15px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 15px;
+}
+ 
+    .wrapper_form{
+        display: grid;
+        margin-left: calc(50% - 300px);
+    }
+
+        .popup-form__input{
+        display: grid;
+        margin-right: 200px;
+        margin-top: 5px;
+        padding: 0 10px;
+        width: 400px;
+        height: calc(350px - 315px);
+        border: 1px solid #000;
+        margin-bottom: 5px;
+        justify-self: center;
+    }
+
+
+    .popup-form__btn{
+        border-radius: 8px;
+        background: $vk_bg;
+        padding: 10px;
+        color: #fff;
+        margin-left: 500px;
+        position: relative;
+        top: -70px;
+        right: 40px;
+        cursor: pointer;
+    }
